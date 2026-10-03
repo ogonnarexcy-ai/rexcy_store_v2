@@ -1,0 +1,287 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f7f8fc;
+    color: #171717;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 7%;
+    background: white;
+    box-shadow: 0 2px 10px #ddd;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #171717;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #6c4cff;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #222;
+    font-weight: bold;
+}
+
+.hero {
+    padding: 100px 7%;
+    background: linear-gradient(135deg, #eeeaff, white);
+}
+
+.tag {
+    color: #6c4cff;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.button {
+    display: inline-block;
+    background: #6c4cff;
+    color: white;
+    padding: 14px 22px;
+    border: none;
+    border-radius: 9px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.products {
+    padding: 70px 7%;
+}
+
+.products h2,
+.about h2 {
+    font-size: 35px;
+    margin-bottom: 25px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px #ddd;
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-body h3 {
+    margin-bottom: 12px;
+}
+
+.price {
+    font-size: 21px;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.order {
+    display: block;
+    text-align: center;
+    background: #171717;
+    color: white;
+    padding: 13px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.about {
+    padding: 70px 7%;
+    background: white;
+}
+
+footer {
+    padding: 30px;
+    text-align: center;
+    background: #171717;
+    color: white;
+}
+
+/* Admin login */
+
+.center-page {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 420px;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px #ddd;
+}
+
+.login-box h1 {
+    margin-bottom: 15px;
+}
+
+.login-box form,
+.product-form {
+    display: grid;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.full {
+    width: 100%;
+}
+
+.back {
+    display: block;
+    margin-top: 20px;
+    color: #6c4cff;
+}
+
+/* Admin dashboard */
+
+.dashboard {
+    max-width: 1100px;
+    margin: 45px auto;
+    padding: 0 20px;
+}
+
+.dashboard > h1 {
+    margin-bottom: 12px;
+}
+
+.panel {
+    background: white;
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px #ddd;
+}
+
+.panel h2 {
+    margin-bottom: 20px;
+}
+
+.product-form {
+    max-width: 650px;
+}
+
+.admin-product {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 15px;
+    border: 1px solid #eee;
+    margin-top: 12px;
+    border-radius: 10px;
+}
+
+.admin-product img {
+    width: 80px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.admin-product div {
+    flex: 1;
+}
+
+.admin-product a {
+    color: #6c4cff;
+}
+
+.delete {
+    background: #d93636;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.message {
+    padding: 12px;
+    margin: 15px 0;
+    border-radius: 8px;
+}
+
+.success {
+    background: #e8f7ed;
+    color: #176b35;
+}
+
+.error {
+    background: #ffecec;
+    color: #9b1c1c;
+}
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 15px 5%;
+    }
+
+    nav {
+        gap: 10px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .admin-product {
+        flex-wrap: wrap;
+    }
+}
