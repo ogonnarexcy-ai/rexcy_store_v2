@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rexcy Store</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <a class="logo" href="/">
+        Rexcy<span>Store</span>
+    </a>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="/admin/login">Admin</a>
+    </nav>
+
+</header>
+
+<section class="hero">
+
+    <p class="tag">WELCOME TO REXCY STORE</p>
+
+    <h1>Find products you love.</h1>
+
+    <p>
+        Discover amazing products and shop from
+        trusted sellers.
+    </p>
+
+    <a class="button" href="#products">
+        Shop Now
+    </a>
+
+</section>
+
+<section class="products" id="products">
+
+    <h2>Our Products</h2>
+
+    <div class="grid">
+
+        {% for product in products %}
+
+        <div class="card">
+
+            <img src="{{ product['image'] }}"
+                 alt="{{ product['name'] }}">
+
+            <div class="card-body">
+
+                <h3>{{ product['name'] }}</h3>
+
+                <p class="price">
+                    {{ product['price'] }}
+                </p>
+
+                <a class="order"
+                   href="{{ product['seller_url'] }}"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    Order Now →
+
+                </a>
+
+            </div>
+
+        </div>
+
+        {% else %}
+
+        <p>No products available yet.</p>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+<section class="about" id="about">
+
+  <section class="about" id="about">
+
+    <h2>About Rexcy Store</h2>
+
+</section>
+
+<footer>
+
+    <p>© 2026 Rexcy Store. All rights reserved.</p>
+
+</footer>
+
+</body>
+
+</html>
