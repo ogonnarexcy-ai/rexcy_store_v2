@@ -605,10 +605,6 @@ def delete_product(product_id):
     )
 
 
-# -----------------------------
-# START REXCY STORE
-# -----------------------------
-
 # Create the database when the app starts
 init_db()
 
