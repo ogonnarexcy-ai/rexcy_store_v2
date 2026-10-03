@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Rexcy Admin Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <a class="logo" href="/">
+        Rexcy<span>Store</span>
+    </a>
+
+    <nav>
+        <a href="/">View Store</a>
+        <a href="/admin/logout">Logout</a>
+    </nav>
+
+</header>
+
+<main class="dashboard">
+
+    <h1>Admin Dashboard</h1>
+
+    <p>Manage your store products here.</p>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+
+        {% for category, message in messages %}
+
+            <p class="message {{ category }}">
+                {{ message }}
+            </p>
+
+        {% endfor %}
+
+    {% endwith %}
+
+    <section class="panel">
+
+        <h2>Add New Product</h2>
+
+        <form method="POST"
+              action="/admin/add"
+              class="product-form">
+
+            <label>Product Name</label>
+
+            <input
+                type="text"
+                name="name"
+                placeholder="Example: Laptop"
+                required
+            >
+
+            <label>Product Price</label>
+
+            <input
+                type="text"
+                name="price"
+                placeholder="Example: ₦150,000"
+                required
+            >
+
+            <label>Product Image URL</label>
+
+            <input
+                type="url"
+                name="image"
+                placeholder="https://example.com/image.jpg"
+                required
+            >
+
+            <label>Real Seller Website URL</label>
+
+            <input
+                type="url"
+                name="seller_url"
+                placeholder="https://seller.com/product"
+                required
+            >
+
+            <button type="submit" class="button">
+                + Add Product
+            </button>
+
+        </form>
+
+    </section>
+
+    <section class="panel">
+
+        <h2>My Products</h2>
+
+        {% for product in products %}
+
+        <div class="admin-product">
+
+            <img src="{{ product['image'] }}" alt="">
+
+            <div>
+
+                <h3>{{ product['name'] }}</h3>
+
+                <p>{{ product['price'] }}</p>
+
+                <a href="{{ product['seller_url'] }}"
+                   target="_blank"
+                   rel="noopener">
+
+                    View Seller
+
+                </a>
+
+            </div>
+
+            <form method="POST"
+                  action="/admin/delete/{{ product['id'] }}"
+                  onsubmit="return confirm('Delete this product?');">
+
+                <button type="submit" class="delete">
+                    Delete
+                </button>
+
+            </form>
+
+        </div>
+
+        {% else %}
+
+        <p>No products added yet.</p>
+
+        {% endfor %}
+
+    </section>
+
+</main>
+
+</body>
+
+</html>
