@@ -30,6 +30,12 @@ body {
     color: #6c4cff;
 }
 
+.logo img {
+    height: 35px;
+    width: auto;
+    display: block;
+}
+
 nav {
     display: flex;
     gap: 20px;
