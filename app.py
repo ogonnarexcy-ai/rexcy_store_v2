@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 app.secret_key = os.environ.get("SECRET_KEY")
 
-
+DB = Path(__file__).with_name("store.db")
 
 ADMIN_USERNAME = os.environ.get("ADMIN_USERNAME")
 ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD")
