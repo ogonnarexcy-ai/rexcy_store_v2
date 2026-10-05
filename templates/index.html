@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,20 +6,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   <title>Shoply</title>
+    <title>Shoply</title>
 
-<link rel="stylesheet"
-      href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
 
-<link rel="icon" type="image/png"
-      href="{{ url_for('static', filename='favicon.png') }}">
+    <link rel="icon" type="image/png"
+          href="{{ url_for('static', filename='favicon.png') }}">
+
+    <!-- Google AdSense -->
+    <script async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1965335094584428"
+        crossorigin="anonymous"></script>
+
+</head>
+
 <body>
 
 <header class="navbar">
 
-   <a class="logo" href="/">
-    <img src="{{ url_for('static', filename='logo.png') }}" alt="shoply Logo">
-</a>
+    <a class="logo" href="/">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Shoply Logo">
+    </a>
 
     <nav>
         <a href="/">Home</a>
@@ -29,9 +38,10 @@
 
 </header>
 
+
 <section class="hero">
 
-   <p class="tag">WELCOME TO SHOPLY</p>
+    <p class="tag">WELCOME TO SHOPLY</p>
 
     <h1>Find products you love.</h1>
 
@@ -44,6 +54,24 @@
         Shop Now
     </a>
 
+</section>
+
+
+<!-- Google AdSense Advertisement -->
+<div class="ad-container">
+
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-1965335094584428"
+         data-ad-slot="2665669627"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+</div>
 
 
 <section class="products" id="products">
@@ -90,20 +118,21 @@
 
 </section>
 
+
 <section class="about" id="about">
 
-  <section class="about" id="about">
-
-   <h2>About Shoply</h2>
+    <h2>About Shoply</h2>
 
 </section>
 
+
 <footer>
 
-    <<p>© 2026 Shoply. All rights reserved.</p>
+    <p>© 2026 Shoply. All rights reserved.</p>
 
 </footer>
 
 </body>
 
 </html>
+```
