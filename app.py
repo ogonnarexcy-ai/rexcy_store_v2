@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
-import sqlite3
+import os
 from functools import wraps
 from pathlib import Path
 
@@ -9,12 +9,12 @@ app = Flask(__name__)
 # BASIC SETTINGS
 # -----------------------------
 
-app.secret_key = "rexcy_store_secret_2026"
+app.secret_key = os.environ.get("SECRET_KEY")
 
-DB = Path(__file__).with_name("store.db")
 
-ADMIN_USERNAME = "admin"
-ADMIN_PASSWORD = "admin123"
+
+ADMIN_USERNAME = os.environ.get("ADMIN_USERNAME")
+ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD")
 
 
 # -----------------------------
